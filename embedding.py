@@ -43,7 +43,7 @@ def embedding(coverPath,embedingPath):
 	for bin,ind in zip(binStreamList,embedZone):
 		embed[ind[0]][ind[1]]=embed[ind[0]][ind[1]]+int(bin)
 	cv2.imwrite('imgs/{}_embeding.bmp'.format(coverPath.split('/')[-1]),embed)
-	return embed
+	return embed,maxDistributionPixelValue
 
 if __name__ == '__main__':
 	opt=embedingArgumentParser()

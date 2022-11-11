@@ -37,7 +37,8 @@ def extracting(imgPath,pivot,imgEmbedSize):
 	imgEmbed = np.array(imgEmbedMatrix,dtype=np.uint8)
 	cv2.imwrite('./imgs/{}_extract.bmp'.format(imgPath.split('/')[-1].split('.')[0]),imgEmbed)
 	cv2.imwrite('./imgs/{}_cover.bmp'.format(imgPath.split('/')[-1].split('.')[0]),extract)
-	print('Extracting done!')
+	print(imgPath.split('/')[-1].split('.')[0],'Extracting done!')
+	return extract,imgEmbed
 
 
 if __name__ == '__main__':

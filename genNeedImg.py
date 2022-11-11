@@ -10,7 +10,7 @@ def genNeedImg(imgPath,size=None,flag='binary'):
     '''
     imgRaw = cv.imread(imgPath)
    
-    if opt.size != None: # 调整图像尺寸
+    if size != None: # 调整图像尺寸
         imgRaw= cv.resize(imgRaw,size)
     else:
         size=[imgRaw.shape[0],imgRaw.shape[1]]
@@ -26,7 +26,9 @@ def genNeedImg(imgPath,size=None,flag='binary'):
         cv.imwrite('./images/{}_binary{}.bmp'.format(imgName,size),imgBinary) 
         print('Binary image generated!')
         print('threshold:{}'.format(ret)) # 输出转换阈值
-        return './images/{}_binary{}.bmp'.format(imgName,size)
+        return imgBinary
+
+
 
 
 if __name__ == "__main__":
